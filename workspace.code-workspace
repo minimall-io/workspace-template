@@ -1,0 +1,23 @@
+{
+  "name": "Workspace",
+  "folders": [
+    {
+      "name": "minimall",
+      "path": "minimall",
+    },
+    {
+      "name": "medusa-plugins",
+      "path": "medusa-plugins",
+    }
+  ],
+  "settings": {
+    "editor.tabSize": 2,
+    "files.trimTrailingWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "window.zoomLevel": 2,
+    "window.autoDetectColorScheme": false,
+    "extensions.ignoreRecommendations": true,
+    "terminal.integrated.scrollback": 10000000,
+    "workbench.colorTheme": "Default Dark Modern"
+  },
+}

@@ -1,21 +1,78 @@
 services:
-  dev:
-    image: #docker image (e.g., node:latest)
+  workspace:
+    image: node:22.19.0
     stdin_open: true
     tty: true
-    container_name: dev-container
+    container_name: workspace-container
     volumes:
       - type: bind
         source: ../
-        target: /home/dev
+        target: /home/workspace
     ports:
       - target: 3000
         published: "3000"
         host_ip: 127.0.0.1
         protocol: tcp
+      - target: 8000
+        published: "8000"
+        host_ip: 127.0.0.1
+        protocol: tcp
+      - target: 8080
+        published: "8080"
+        host_ip: 127.0.0.1
+        protocol: tcp
+      - target: 9000
+        published: "9000"
+        host_ip: 127.0.0.1
+        protocol: tcp
     networks:
-      - devnet
+      - workspace-net
+  postgres:
+    image: postgres:17.6
+    container_name: postgres-container
+    volumes:
+      - type: volume
+        source: postgres-volume
+        target: /var/lib/postgresql/data
+        read_only: false
+        volume:
+          nocopy: false
+      - type: bind
+        source: ./init.sql
+        target: /docker-entrypoint-initdb.d/init.sql
+        read_only: true
+    ports:
+      - target: 5432
+        host_ip: 0.0.0.0
+        protocol: tcp
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    networks:
+      - workspace-net
+  redis:
+    image: redis:8.2.1
+    container_name: redis-container
+    volumes:
+      - type: volume
+        source: redis-volume
+        target: /data
+        read_only: false
+        volume:
+          nocopy: false
+    ports:
+      - target: 6379
+        host_ip: 0.0.0.0
+        protocol: tcp
+    environment:
+      REDIS_PASSWORD: redis
+    networks:
+      - workspace-net
 
 networks:
-  devnet:
-    name: devnet
+  workspace-net:
+    name: workspace-net
+
+volumes:
+  postgres-volume:
+  redis-volume:

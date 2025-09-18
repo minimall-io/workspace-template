@@ -1,34 +1,5 @@
 {
-  "name": "Dev Container",
   "dockerComposeFile": "compose.yaml",
-  "service": "dev",
-  "workspaceFolder": "/home/dev",
-
-  // Use this environment variable if you need to bind mount your local source code into a new container.
-  "remoteEnv": {
-    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
-  },
-  "customizations": {
-    "vscode": {
-      "settings": {
-        "editor.tabSize": 2,
-        "files.trimTrailingWhitespace": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": {
-          "source.fixAll": "explicit",
-          "source.organizeImports": "explicit"
-        },
-        "editor.formatOnSave": true,
-        "diffEditor.ignoreTrimWhitespace": false,
-        "window.zoomLevel": 2,
-        "window.autoDetectColorScheme": false,
-        "extensions.ignoreRecommendations": true,
-        "terminal.integrated.scrollback": 10000000,
-        "workbench.colorTheme": "Default Dark Modern"
-      },
-      "extensions": [
-        "esbenp.prettier-vscode"
-      ]
-    }
-  }
+  "service": "workspace",
+  "workspaceFolder": "/home/workspace"
 }
