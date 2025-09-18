@@ -1,0 +1,9 @@
+# Ignore everything except the tracked files defined below
+*
+
+# Tracked
+!.devcontainer/
+!.gitignore
+!README.md
+!template.git-init.sh
+!workspace.code-workspace
