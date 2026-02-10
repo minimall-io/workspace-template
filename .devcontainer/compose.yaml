@@ -1,6 +1,6 @@
 services:
   workspace:
-    image: node:22.19.0
+    image: node:24.11.0
     stdin_open: true
     tty: true
     container_name: workspace-container
@@ -28,12 +28,12 @@ services:
     networks:
       - workspace-net
   postgres:
-    image: postgres:17.6
+    image: postgres:18.0
     container_name: postgres-container
     volumes:
       - type: volume
         source: postgres-volume
-        target: /var/lib/postgresql/data
+        target: /var/lib/postgresql
         read_only: false
         volume:
           nocopy: false
@@ -51,7 +51,7 @@ services:
     networks:
       - workspace-net
   redis:
-    image: redis:8.2.1
+    image: redis:8.2.3
     container_name: redis-container
     volumes:
       - type: volume
