@@ -2,12 +2,16 @@
   "name": "Workspace",
   "folders": [
     {
-      "name": "minimall",
-      "path": "minimall",
+      "name": "medusa-plugins",
+      "path": "medusa-plugins"
     },
     {
-      "name": "medusa-plugins",
-      "path": "medusa-plugins",
+      "name": "medusa",
+      "path": "medusa"
+    },
+    {
+      "name": "minimall.io",
+      "path": "minimall.io"
     }
   ],
   "settings": {
