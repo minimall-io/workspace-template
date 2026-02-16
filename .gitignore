@@ -2,7 +2,7 @@
 *
 
 # Tracked
-!.devcontainer/
+!.devcontainer/**
 !.gitignore
 !README.md
 !git-init.template.sh
