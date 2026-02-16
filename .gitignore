@@ -5,5 +5,5 @@
 !.devcontainer/
 !.gitignore
 !README.md
-!template.git-init.sh
+!git-init.template.sh
 !workspace.code-workspace
