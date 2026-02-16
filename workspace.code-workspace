@@ -6,12 +6,8 @@
       "path": "medusa-plugins"
     },
     {
-      "name": "medusa",
-      "path": "medusa"
-    },
-    {
-      "name": "minimall.io",
-      "path": "minimall.io"
+      "name": "astro-primitives",
+      "path": "astro-primitives"
     }
   ],
   "settings": {
